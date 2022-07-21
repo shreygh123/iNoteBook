@@ -13,9 +13,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix Backend && npm run build --prefix Backend",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "both": "concurrently \"npm run start\"  \"nodemon  Backend/index.js\""
+
   },
   "eslintConfig": {
     "extends": [
